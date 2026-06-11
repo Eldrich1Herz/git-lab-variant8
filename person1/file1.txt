@@ -1,3 +1,7 @@
+<<<<<<< HEAD
 File 1 content
 Added by person2
 Goodbye from person1
+=======
+Hello from person3
+>>>>>>> origin/dev3
