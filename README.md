@@ -85,14 +85,19 @@ $ git reflog
 cfdf4aa HEAD@{0}: commit: Apply patches from dev3
 ae88733 HEAD@{1}: commit: text test dev2
 fb447e5 HEAD@{2}: commit: resolve conflict
+
 $ git reset --hard HEAD~1
 HEAD is now at ae88733 text test dev2
+
 $ git reflog
 ae88733 HEAD@{0}: reset: moving to HEAD~1
 cfdf4aa HEAD@{1}: commit: Apply patches from dev3   # потерянный коммит
+
 $ git checkout -b recovered-branch cfdf4aa
 Switched to a new branch 'recovered-branch'
+
 $ git checkout main
+
 $ git merge recovered-branch
 Updating ae88733..cfdf4aa
 Fast-forward
@@ -100,6 +105,7 @@ Fast-forward
  person1/c2.txt | 1 +
  person1/c3.txt | 1 +
  3 files changed, 3 insertions(+)
+
 $ git log --oneline -3
 cfdf4aa Apply patches from dev3
 ae88733 text test dev2
